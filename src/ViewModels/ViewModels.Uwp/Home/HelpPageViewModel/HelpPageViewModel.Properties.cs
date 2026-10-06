@@ -33,9 +33,6 @@ namespace Bili.ViewModels.Uwp.Home
         public IAsyncRelayCommand GotoProjectHomeCommand { get; }
 
         /// <inheritdoc/>
-        public IAsyncRelayCommand GotoDeveloperBiliBiliHomePageCommand { get; }
-
-        /// <inheritdoc/>
         public IAsyncRelayCommand InitializeCommand { get; }
     }
 }

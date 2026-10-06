@@ -24,16 +24,16 @@
         <labs:SettingsExpander.Items>
             <labs:SettingsCard HorizontalAlignment="Stretch" ContentAlignment="Left">
                 <StackPanel>
-                    <HyperlinkButton
-                        HorizontalAlignment="Left"
-                        Content="{ext:Locale Name=BiliHomePage}"
-                        FontSize="12"
-                        NavigateUri="https://space.bilibili.com/5992670" />
+                    <TextBlock
+                        MaxWidth="480"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="{ext:Locale Name=ThirdPartyMaintenanceNotice}"
+                        TextWrapping="Wrap" />
                     <HyperlinkButton
                         HorizontalAlignment="Left"
                         Content="{ext:Locale Name=ProjectHomePage}"
                         FontSize="12"
-                        NavigateUri="https://github.com/Richasy/Bili.Uwp/" />
+                        NavigateUri="https://github.com/flulwh/Bili.Uwp/" />
                 </StackPanel>
             </labs:SettingsCard>
         </labs:SettingsExpander.Items>

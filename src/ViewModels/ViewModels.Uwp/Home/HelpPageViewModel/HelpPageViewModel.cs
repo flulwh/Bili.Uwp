@@ -36,7 +36,6 @@ namespace Bili.ViewModels.Uwp.Home
 
             AskIssueCommand = new AsyncRelayCommand(AskIssueAsync);
             GotoProjectHomeCommand = new AsyncRelayCommand(GotoProjectHomeAsync);
-            GotoDeveloperBiliBiliHomePageCommand = new AsyncRelayCommand(GotoDeveloperBiliBiliHomePageAsync);
             InitializeCommand = new AsyncRelayCommand(InitializeQuestionsAsync);
         }
 
@@ -96,8 +95,5 @@ namespace Bili.ViewModels.Uwp.Home
 
         private async Task GotoProjectHomeAsync()
             => await Launcher.LaunchUriAsync(new Uri("https://github.com/flulwh/Bili.Uwp/")).AsTask();
-
-        private async Task GotoDeveloperBiliBiliHomePageAsync()
-            => await Launcher.LaunchUriAsync(new Uri("https://space.bilibili.com/5992670")).AsTask();
     }
 }

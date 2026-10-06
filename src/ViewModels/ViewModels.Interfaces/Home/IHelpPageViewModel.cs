@@ -24,11 +24,6 @@ namespace Bili.ViewModels.Interfaces.Home
         IAsyncRelayCommand GotoProjectHomeCommand { get; }
 
         /// <summary>
-        /// 打开开发者B站账户页面命令.
-        /// </summary>
-        IAsyncRelayCommand GotoDeveloperBiliBiliHomePageCommand { get; }
-
-        /// <summary>
         /// 关联链接集合.
         /// </summary>
         ObservableCollection<KeyValue<string>> LinkCollection { get; }

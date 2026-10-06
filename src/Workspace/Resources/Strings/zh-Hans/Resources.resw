@@ -144,8 +144,8 @@
   <data name="Bili" xml:space="preserve">
     <value>哔哩</value>
   </data>
-  <data name="BiliHomePage" xml:space="preserve">
-    <value>开发者B站主页</value>
+  <data name="ThirdPartyMaintenanceNotice" xml:space="preserve">
+    <value>本软件是由 flulwh 独立维护的第三方版本，与哔哩哔哩官方及原作者无隶属关系。原项目作者：Richasy。</value>
   </data>
   <data name="Billion" xml:space="preserve">
     <value>亿</value>

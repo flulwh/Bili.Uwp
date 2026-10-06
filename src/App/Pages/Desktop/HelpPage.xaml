@@ -90,21 +90,18 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Grid ColumnSpacing="16">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Button
-                            x:Name="BiliHomePage"
-                            Height="40"
-                            HorizontalAlignment="Stretch"
-                            Command="{x:Bind ViewModel.GotoDeveloperBiliBiliHomePageCommand}">
-                            <TextBlock Text="{loc:Locale Name=BiliHomePage}" TextTrimming="CharacterEllipsis" />
-                        </Button>
+                    <Grid RowSpacing="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{loc:Locale Name=ThirdPartyMaintenanceNotice}"
+                            TextWrapping="Wrap" />
                         <Button
                             x:Name="ProjectHomePage"
-                            Grid.Column="1"
+                            Grid.Row="1"
                             Height="40"
                             HorizontalAlignment="Stretch"
                             Command="{x:Bind ViewModel.GotoProjectHomeCommand}">

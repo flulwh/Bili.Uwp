@@ -325,7 +325,7 @@ namespace Bili.Models.Enums
         IsNeedFeedback,
         IsNeedFeedbackDescription,
         AskIssue,
-        BiliHomePage,
+        ThirdPartyMaintenanceNotice,
         ProjectHomePage,
         RelatedProjects,
         AddViewLaterSucceseded,

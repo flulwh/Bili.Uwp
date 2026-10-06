@@ -228,8 +228,8 @@ BV號以 BV 開頭，是一串英文數字混合的編號， 如 BV1JL4y1875w</v
   <data name="BelikeCount" xml:space="preserve">
     <value>獲讚數</value>
   </data>
-  <data name="BiliHomePage" xml:space="preserve">
-    <value>開發者B站主頁</value>
+  <data name="ThirdPartyMaintenanceNotice" xml:space="preserve">
+    <value>本軟體是由 flulwh 獨立維護的第三方版本，與嗶哩嗶哩官方及原作者無隸屬關係。原專案作者：Richasy。</value>
   </data>
   <data name="Billion" xml:space="preserve">
     <value>億</value>
