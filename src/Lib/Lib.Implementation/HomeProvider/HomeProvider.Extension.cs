@@ -23,11 +23,11 @@ namespace Bili.Lib
         private readonly IFileToolkit _fileToolkit;
         private readonly IPgcAdapter _pgcAdapter;
 
-        private readonly Dictionary<string, (int OffsetId, int PageNumber)> _cacheVideoPartitionOffsets;
+        private readonly Dictionary<string, (long OffsetId, int PageNumber)> _cacheVideoPartitionOffsets;
 
         private long _recommendOffsetId;
         private long _popularOffsetId;
-        private int _videoPartitionOffsetId = 0;
+        private long _videoPartitionOffsetId;
         private int _videoPartitionPageNumber = 1;
         private string _currentPartitionId = string.Empty;
 

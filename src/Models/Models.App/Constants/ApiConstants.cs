@@ -333,9 +333,29 @@ namespace Bili.Models.App.Constants
             public const string RoomDetail = _liveBase + "/xlive/app-room/v1/index/getInfoByRoom";
 
             /// <summary>
+            /// 直播间详情（网页接口）.
+            /// </summary>
+            public const string WebRoomDetail = _liveBase + "/xlive/web-room/v1/index/getInfoByRoom";
+
+            /// <summary>
+            /// 直播间详情（旧版公开接口）.
+            /// </summary>
+            public const string LegacyRoomDetail = _liveBase + "/room/v1/Room/get_info";
+
+            /// <summary>
+            /// 直播主播信息（旧版公开接口）.
+            /// </summary>
+            public const string LegacyAnchorInformation = _liveBase + "/live_user/v1/Master/info";
+
+            /// <summary>
             /// 直播播放信息.
             /// </summary>
             public const string PlayInformation = _liveBase + "/xlive/web-room/v1/index/getRoomPlayInfo";
+
+            /// <summary>
+            /// 直播播放地址（旧版公开接口）.
+            /// </summary>
+            public const string LegacyPlayUrl = _liveBase + "/room/v1/Room/playUrl";
 
             /// <summary>
             /// 聊天套接字地址.

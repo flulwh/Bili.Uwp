@@ -31,7 +31,6 @@ namespace Bili.ViewModels.Uwp.Core
         {
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Referer = new Uri("https://live.bilibili.com/");
-            httpClient.DefaultRequestHeaders.Add("rtsp_transport", "tcp");
             httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 BiliDroid/1.12.0 (bbcallen@gmail.com)");
             return httpClient;
         }
@@ -89,18 +88,17 @@ namespace Bili.ViewModels.Uwp.Core
             try
             {
                 _liveConfig.VideoDecoderMode = GetDecoderMode();
-                var client = GetLiveClient();
 
-                // 这里是一种试错的机制。对于国内用户来说，可以通过 Url 直接创建播放源
-                // 但是对于海外地区，直接创建播放源可能会崩，需要先获取网络流.
+                // Let FFmpeg manage live playlists and their subsequent segment requests.
                 if (_liveRetryCount == 0)
                 {
-                    _videoStream = await HttpRandomAccessStream.CreateAsync(client, new Uri(url));
-                    _videoFFSource = await FFmpegMediaSource.CreateFromStreamAsync(_videoStream);
+                    _videoFFSource = await FFmpegMediaSource.CreateFromUriAsync(url, _liveConfig);
                 }
                 else
                 {
-                    _videoFFSource = await FFmpegMediaSource.CreateFromUriAsync(url, _liveConfig);
+                    var client = GetLiveClient();
+                    _videoStream = await HttpRandomAccessStream.CreateAsync(client, new Uri(url));
+                    _videoFFSource = await FFmpegMediaSource.CreateFromStreamAsync(_videoStream);
                 }
 
                 _videoPlaybackItem = _videoFFSource.CreateMediaPlaybackItem();

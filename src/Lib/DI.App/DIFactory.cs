@@ -104,7 +104,6 @@ namespace Bili.DI.App
                 .RegisterTransient<IPlaybackRateItemViewModel, PlaybackRateItemViewModel>()
                 .RegisterTransient<IVideoIdentifierSelectableViewModel, VideoIdentifierSelectableViewModel>()
                 .RegisterTransient<IVideoFavoriteFolderSelectableViewModel, VideoFavoriteFolderSelectableViewModel>()
-                .RegisterTransient<IDownloadModuleViewModel, DownloadModuleViewModel>()
                 .RegisterTransient<ISubtitleModuleViewModel, SubtitleModuleViewModel>()
                 .RegisterTransient<IDanmakuModuleViewModel, DanmakuModuleViewModel>()
                 .RegisterTransient<IInteractionModuleViewModel, InteractionModuleViewModel>()
@@ -131,8 +130,7 @@ namespace Bili.DI.App
                 .RegisterSingleton<ICinemaFavoriteModuleViewModel, CinemaFavoriteModuleViewModel>()
                 .RegisterSingleton<IArticleFavoriteModuleViewModel, ArticleFavoriteModuleViewModel>()
                 .RegisterSingleton<IUserSpaceViewModel, UserSpaceViewModel>()
-                .RegisterSingleton<IAvBvConverterViewModel, AvBvConverterViewModel>()
-                .RegisterSingleton<ICoverDownloaderViewModel, CoverDownloaderViewModel>()
+                .RegisterSingleton<IDanmakuExporterViewModel, DanmakuExporterViewModel>()
                 .RegisterSingleton<IDynamicAllModuleViewModel, DynamicAllModuleViewModel>()
                 .RegisterSingleton<IDynamicVideoModuleViewModel, DynamicVideoModuleViewModel>()
 

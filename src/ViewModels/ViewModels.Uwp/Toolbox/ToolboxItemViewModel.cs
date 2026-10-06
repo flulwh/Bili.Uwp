@@ -35,13 +35,9 @@ namespace Bili.ViewModels.Uwp.Toolbox
             Type = type;
             switch (type)
             {
-                case ToolboxItemType.AvBvConverter:
-                    Title = _resourceToolkit.GetLocaleString(LanguageNames.AvBvConverter);
-                    Description = _resourceToolkit.GetLocaleString(LanguageNames.AvBvConverterDescription);
-                    break;
-                case ToolboxItemType.CoverDownloader:
-                    Title = _resourceToolkit.GetLocaleString(LanguageNames.CoverDownloader);
-                    Description = _resourceToolkit.GetLocaleString(LanguageNames.CoverDownloaderDescription);
+                case ToolboxItemType.DanmakuExporter:
+                    Title = _resourceToolkit.GetLocaleString(LanguageNames.DanmakuExporter);
+                    Description = _resourceToolkit.GetLocaleString(LanguageNames.DanmakuExporterDescription);
                     break;
                 default:
                     break;

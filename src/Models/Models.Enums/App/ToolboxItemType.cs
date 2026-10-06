@@ -8,13 +8,8 @@ namespace Bili.Models.Enums
     public enum ToolboxItemType
     {
         /// <summary>
-        /// AV号BV号转换.
+        /// 弹幕导出.
         /// </summary>
-        AvBvConverter,
-
-        /// <summary>
-        /// 视频封面下载器.
-        /// </summary>
-        CoverDownloader,
+        DanmakuExporter,
     }
 }

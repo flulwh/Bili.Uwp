@@ -17,11 +17,8 @@ namespace Bili.App.Resources.Converter
             {
                 switch (type)
                 {
-                    case ToolboxItemType.AvBvConverter:
-                        symbol = RegularFluentSymbol.TextClearFormatting24;
-                        break;
-                    case ToolboxItemType.CoverDownloader:
-                        symbol = RegularFluentSymbol.ImageSearch24;
+                    case ToolboxItemType.DanmakuExporter:
+                        symbol = RegularFluentSymbol.ArrowDownload24;
                         break;
                     default:
                         break;

@@ -205,13 +205,13 @@ namespace Bili.Models.BiliBili
         /// 弹幕数.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "danmaku", Required = Required.Default)]
-        public int DanmakuCount { get; set; }
+        public long DanmakuCount { get; set; }
 
         /// <summary>
         /// 关注数.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "follow", Required = Required.Default)]
-        public int FollowCount { get; set; }
+        public long FollowCount { get; set; }
 
         /// <summary>
         /// 关注的显示文本.
@@ -223,7 +223,7 @@ namespace Bili.Models.BiliBili
         /// 观看次数.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "view", Required = Required.Default)]
-        public int ViewCount { get; set; }
+        public long ViewCount { get; set; }
     }
 
     /// <summary>

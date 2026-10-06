@@ -93,7 +93,13 @@ namespace Bili.Adapter
         /// <inheritdoc/>
         public LivePlayerView ConvertToLivePlayerView(LiveRoomDetail detail)
         {
-            var roomInfo = detail.RoomInformation;
+            var roomInfo = detail?.RoomInformation;
+            var userInfo = detail?.AnchorInformation?.UserBasicInformation;
+            if (roomInfo == null || userInfo == null)
+            {
+                throw new InvalidOperationException("直播间详情缺少房间或主播信息。");
+            }
+
             var title = _textToolkit.ConvertToTraditionalChineseIfNeeded(roomInfo.Title);
             var id = roomInfo.RoomId.ToString();
             var description = string.IsNullOrEmpty(roomInfo.Description)
@@ -114,7 +120,6 @@ namespace Bili.Adapter
 
             var viewerCount = roomInfo.ViewerCount;
             var cover = _imageAdapter.ConvertToImage(roomInfo.Cover ?? roomInfo.Keyframe);
-            var userInfo = detail.AnchorInformation.UserBasicInformation;
             var userProfile = _userAdapter.ConvertToUserProfile(roomInfo.UserId, userInfo.UserName, userInfo.Avatar, Models.Enums.App.AvatarSize.Size48);
             var partition = $"{roomInfo.ParentAreaName} · {roomInfo.AreaName}";
             var subtitle = DateTimeOffset.FromUnixTimeSeconds(detail.RoomInformation.LiveStartTime).ToLocalTime().ToString("yyyy/MM/dd HH:mm");
@@ -179,7 +184,13 @@ namespace Bili.Adapter
                     {
                         var name = codec.CodecName;
                         var urls = codec.Urls.Select(p => new LivePlayUrl(p.Host, codec.BaseUrl, p.Extra));
-                        lines.Add(new LivePlaylineInformation(name, codec.CurrentQuality, codec.AcceptQualities, urls));
+                        lines.Add(new LivePlaylineInformation(
+                            name,
+                            codec.CurrentQuality,
+                            codec.AcceptQualities,
+                            urls,
+                            stream.ProtocolName,
+                            format.FormatName));
                     }
                 }
             }

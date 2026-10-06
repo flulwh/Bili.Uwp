@@ -20,12 +20,16 @@ namespace Bili.Models.Data.Live
             string name,
             int quality,
             IEnumerable<int> acceptQualities,
-            IEnumerable<LivePlayUrl> urls)
+            IEnumerable<LivePlayUrl> urls,
+            string protocolName = null,
+            string formatName = null)
         {
             Name = name;
             Quality = quality;
             AcceptQualities = acceptQualities;
             Urls = urls;
+            ProtocolName = protocolName;
+            FormatName = formatName;
         }
 
         /// <summary>
@@ -47,5 +51,15 @@ namespace Bili.Models.Data.Live
         /// 播放地址列表.
         /// </summary>
         public IEnumerable<LivePlayUrl> Urls { get; }
+
+        /// <summary>
+        /// 流协议名称.
+        /// </summary>
+        public string ProtocolName { get; }
+
+        /// <summary>
+        /// 媒体封装格式.
+        /// </summary>
+        public string FormatName { get; }
     }
 }

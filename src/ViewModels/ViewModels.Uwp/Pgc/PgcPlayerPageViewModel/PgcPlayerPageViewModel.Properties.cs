@@ -190,8 +190,5 @@ namespace Bili.ViewModels.Uwp.Pgc
 
         /// <inheritdoc/>
         public ObservableCollection<IUserItemViewModel> Celebrities { get; }
-
-        /// <inheritdoc/>
-        public IDownloadModuleViewModel DownloadViewModel { get; }
     }
 }

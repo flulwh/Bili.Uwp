@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Bili.Models.Data.Live;
@@ -33,9 +34,16 @@ namespace Bili.ViewModels.Uwp.Core
             DanmakuViewModel.SetData(view.Information.Identifier.Id, default, _videoType);
             _liveMediaInformation = await _liveProvider.GetLiveMediaInformationAsync(view.Information.Identifier.Id, quality, IsLiveAudioOnly);
 
+            var lines = _liveMediaInformation.Lines?.ToList() ?? new System.Collections.Generic.List<LivePlaylineInformation>();
+            if (lines.Count == 0)
+            {
+                throw new System.InvalidOperationException(_resourceToolkit.GetLocaleString(LanguageNames.LiveStreamUnavailable));
+            }
+
             if (_currentPlayline == null)
             {
-                _currentPlayline = _liveMediaInformation.Lines.FirstOrDefault(p => p.Quality == quality) ?? _liveMediaInformation.Lines.First();
+                _currentPlayline = lines.FirstOrDefault(p => p.Quality == quality)
+                    ?? lines.OrderByDescending(p => p.Quality).First();
             }
         }
 
@@ -59,37 +67,56 @@ namespace Bili.ViewModels.Uwp.Core
             }
 
             var formatId = GetFormatId(true);
-            await SelectLiveFormatAsync(Formats.First(p => p.Quality == formatId));
+            var format = Formats.FirstOrDefault(p => p.Quality == formatId)
+                ?? Formats.OrderByDescending(p => p.Quality).FirstOrDefault();
+            if (format == null)
+            {
+                throw new System.InvalidOperationException(_resourceToolkit.GetLocaleString(LanguageNames.LiveStreamUnavailable));
+            }
+
+            await SelectLiveFormatAsync(format);
         }
 
         private async Task SelectLiveFormatAsync(FormatInformation format)
         {
             CurrentFormat = format;
+            IsError = false;
+            ErrorText = null;
             ResetPlayer();
             InitializePlayer();
             var view = _viewData as LivePlayerView;
             var codecId = GetLivePreferCodecId();
             var quality = format.Quality;
             _liveMediaInformation = await _liveProvider.GetLiveMediaInformationAsync(view.Information.Identifier.Id, quality, IsLiveAudioOnly);
-            if (_liveMediaInformation.Lines != null)
+
+            var lines = _liveMediaInformation.Lines?.ToList() ?? new System.Collections.Generic.List<LivePlaylineInformation>();
+            var qualityLines = lines
+                .Where(p => p.Quality == quality || (p.AcceptQualities?.Contains(quality) ?? false))
+                .ToList();
+            if (qualityLines.Count == 0)
             {
-                var playlines = _liveMediaInformation.Lines.Where(p => p.Name == codecId);
-                if (playlines.Count() == 0)
-                {
-                    playlines = _liveMediaInformation.Lines.Where(p => p.Urls.Any(j => j.Host.EndsWith(".com")));
-                }
-
-                var url = playlines.SelectMany(p => p.Urls).FirstOrDefault(p => p.Host.EndsWith(".com"));
-                if (url == null)
-                {
-                    IsError = true;
-                    ErrorText = _resourceToolkit.GetLocaleString(LanguageNames.FlvNotSupported);
-                    return;
-                }
-
-                _settingsToolkit.WriteLocalSetting(SettingNames.DefaultLiveFormat, CurrentFormat.Quality);
-                await InitializeLivePlayerAsync(url.ToString());
+                qualityLines = lines;
             }
+
+            var url = qualityLines
+                .OrderBy(p => string.Equals(p.Name, codecId, System.StringComparison.OrdinalIgnoreCase) ? 0 : 1)
+                .ThenBy(p => p.ProtocolName?.IndexOf("hls", System.StringComparison.OrdinalIgnoreCase) >= 0 ? 0 : 1)
+                .ThenBy(p => string.Equals(p.FormatName, "ts", System.StringComparison.OrdinalIgnoreCase) ? 0 : 1)
+                .SelectMany(p => p.Urls ?? Enumerable.Empty<LivePlayUrl>())
+                .FirstOrDefault(p => Uri.TryCreate(p.ToString(), UriKind.Absolute, out var uri)
+                    && (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps));
+
+            if (url == null)
+            {
+                IsError = true;
+                ErrorText = _resourceToolkit.GetLocaleString(LanguageNames.LiveStreamUnavailable);
+                return;
+            }
+
+            _currentPlayline = qualityLines.FirstOrDefault(p => string.Equals(p.Name, codecId, System.StringComparison.OrdinalIgnoreCase))
+                ?? qualityLines.FirstOrDefault();
+            _settingsToolkit.WriteLocalSetting(SettingNames.DefaultLiveFormat, CurrentFormat.Quality);
+            await InitializeLivePlayerAsync(url.ToString());
         }
 
         private async Task InitializeLivePlayerAsync(string url)

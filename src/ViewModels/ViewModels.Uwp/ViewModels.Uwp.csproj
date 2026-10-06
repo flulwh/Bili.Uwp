@@ -15,7 +15,6 @@
     <Compile Include="Base\DynamicModuleViewModelBase\DynamicModuleViewModelBase.cs" />
     <Compile Include="Base\DynamicModuleViewModelBase\DynamicModuleViewModelBase.Properties.cs" />
     <Compile Include="Base\PlayerPageViewModelBase.cs" />
-    <Compile Include="Common\DownloadModuleViewModel\DownloadModuleViewModel.Properties.cs" />
     <Compile Include="Common\InteractionModuleViewModel\InteractionModuleViewModel.cs" />
     <Compile Include="Common\InteractionModuleViewModel\InteractionModuleViewModel.Proeprties.cs" />
     <Compile Include="Common\PlaybackRateItemViewModel.cs" />
@@ -153,8 +152,7 @@
     <Compile Include="Live\LivePartitionPageViewModel\LivePartitionPageViewModel.Properties.cs" />
     <Compile Include="Pgc\EpisodeItemViewModel\EpisodeItemViewModel.Properties.cs" />
     <Compile Include="Pgc\EpisodeItemViewModel\EpisodeItemViewModel.cs" />
-    <Compile Include="Toolbox\CoverDownloaderViewModel.cs" />
-    <Compile Include="Toolbox\AvBvConverterViewModel.cs" />
+    <Compile Include="Toolbox\DanmakuExporterViewModel.cs" />
     <Compile Include="Base\SelectableViewModelBase{T}.cs" />
     <Compile Include="Common\DanmakuModuleViewModel\DanmakuModuleViewModel.cs" />
     <Compile Include="Common\DanmakuModuleViewModel\DanmakuModuleViewModel.Methods.cs" />
@@ -167,7 +165,6 @@
     <Compile Include="Article\ArticleFavoriteModuleViewModel\ArticleFavoriteModuleViewModel.Properties.cs" />
     <Compile Include="Home\HelpPageViewModel\HelpPageViewModel.cs" />
     <Compile Include="Home\HelpPageViewModel\HelpPageViewModel.Properties.cs" />
-    <Compile Include="Common\DownloadModuleViewModel\DownloadModuleViewModel.cs" />
     <Compile Include="Common\NumberPartViewModel.cs" />
     <Compile Include="Pgc\DocumentaryPageViewModel.cs" />
     <Compile Include="Home\SettingsPageViewModel\SettingsPageViewModel.cs" />

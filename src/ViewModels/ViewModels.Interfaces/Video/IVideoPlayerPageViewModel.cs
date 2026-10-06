@@ -133,11 +133,6 @@ namespace Bili.ViewModels.Interfaces.Video
         ObservableCollection<IVideoItemViewModel> CurrentSeasonVideos { get; }
 
         /// <summary>
-        /// 下载模块视图模型.
-        /// </summary>
-        IDownloadModuleViewModel DownloadViewModel { get; }
-
-        /// <summary>
         /// 视图信息.
         /// </summary>
         VideoPlayerView View { get; }

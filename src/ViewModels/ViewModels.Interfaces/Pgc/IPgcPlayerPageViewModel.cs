@@ -117,11 +117,6 @@ namespace Bili.ViewModels.Interfaces.Pgc
         ObservableCollection<IUserItemViewModel> Celebrities { get; }
 
         /// <summary>
-        /// 下载模块视图模型.
-        /// </summary>
-        IDownloadModuleViewModel DownloadViewModel { get; }
-
-        /// <summary>
         /// 视图信息.
         /// </summary>
         PgcPlayerView View { get; }

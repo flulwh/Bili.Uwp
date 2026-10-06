@@ -210,8 +210,5 @@ namespace Bili.ViewModels.Uwp.Video
 
         /// <inheritdoc/>
         public ObservableCollection<IVideoItemViewModel> CurrentSeasonVideos { get; set; }
-
-        /// <inheritdoc/>
-        public IDownloadModuleViewModel DownloadViewModel { get; }
     }
 }

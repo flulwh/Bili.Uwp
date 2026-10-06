@@ -20,8 +20,7 @@ namespace Bili.ViewModels.Uwp.Home
         {
             ToolCollection = new ObservableCollection<IToolboxItemViewModel>
             {
-                GetItemViewModel(ToolboxItemType.AvBvConverter),
-                GetItemViewModel(ToolboxItemType.CoverDownloader),
+                GetItemViewModel(ToolboxItemType.DanmakuExporter),
             };
         }
 

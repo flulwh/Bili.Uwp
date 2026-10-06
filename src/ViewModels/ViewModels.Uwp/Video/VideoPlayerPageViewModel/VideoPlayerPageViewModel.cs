@@ -12,7 +12,6 @@ using Bili.Models.Data.Video;
 using Bili.Models.Enums;
 using Bili.Toolkit.Interfaces;
 using Bili.ViewModels.Interfaces.Account;
-using Bili.ViewModels.Interfaces.Common;
 using Bili.ViewModels.Interfaces.Community;
 using Bili.ViewModels.Interfaces.Core;
 using Bili.ViewModels.Interfaces.Video;
@@ -41,7 +40,6 @@ namespace Bili.ViewModels.Uwp.Video
             IRecordViewModel recordViewModel,
             INavigationViewModel navigationViewModel,
             IAccountViewModel accountViewModel,
-            IDownloadModuleViewModel downloadViewModel,
             ICommentPageViewModel commentPageViewModel)
         {
             _playerProvider = playerProvider;
@@ -66,8 +64,6 @@ namespace Bili.ViewModels.Uwp.Video
             Seasons = new ObservableCollection<VideoSeason>();
             CurrentSeasonVideos = new ObservableCollection<IVideoItemViewModel>();
             VideoPlaylist = new ObservableCollection<IVideoItemViewModel>();
-
-            DownloadViewModel = downloadViewModel;
 
             IsSignedIn = _authorizeProvider.State == AuthorizeState.SignedIn;
             _authorizeProvider.StateChanged += OnAuthorizeStateChanged;

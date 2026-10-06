@@ -27,13 +27,13 @@ namespace Bili.Models.BiliBili
         /// 向上刷新的标识符.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ctop", Required = Required.Default)]
-        public int TopOffsetId { get; set; }
+        public long TopOffsetId { get; set; }
 
         /// <summary>
         /// 向下刷新的标识符.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cbottom", Required = Required.Default)]
-        public int BottomOffsetId { get; set; }
+        public long BottomOffsetId { get; set; }
     }
 
     /// <summary>

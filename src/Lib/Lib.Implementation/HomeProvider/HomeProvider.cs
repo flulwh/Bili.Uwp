@@ -48,7 +48,7 @@ namespace Bili.Lib
 
             _popularOffsetId = 0;
             _recommendOffsetId = 0;
-            _cacheVideoPartitionOffsets = new Dictionary<string, (int OffsetId, int PageNumber)>();
+            _cacheVideoPartitionOffsets = new Dictionary<string, (long OffsetId, int PageNumber)>();
         }
 
         /// <inheritdoc/>

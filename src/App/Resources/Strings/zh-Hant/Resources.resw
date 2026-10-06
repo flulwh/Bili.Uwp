@@ -192,21 +192,6 @@
   <data name="Av1" xml:space="preserve">
     <value>AV1</value>
   </data>
-  <data name="AvBvConverter" xml:space="preserve">
-    <value>AV/BV 互轉</value>
-  </data>
-  <data name="AvBvConverterDescription" xml:space="preserve">
-    <value>影片AV號與BV號相互轉換</value>
-  </data>
-  <data name="AvBvConverterIntroduce" xml:space="preserve">
-    <value>軟體將根據輸入的 Id 自動判斷輸入的是 AV 號還是 BV 號。
-AV號是一串數字，如 170001
-
-BV號以 BV 開頭，是一串英文數字混合的編號， 如 BV1JL4y1875w</value>
-  </data>
-  <data name="AvBvId" xml:space="preserve">
-    <value>AV或BV號</value>
-  </data>
   <data name="BackSkip" xml:space="preserve">
     <value>向後跳轉</value>
   </data>
@@ -358,14 +343,23 @@ UGC優先級：分P &gt; 播放列表 &gt; 合集影片 &gt; 關聯影片 (如�
   <data name="CopyToClipboardAfterScreenshot" xml:space="preserve">
     <value>擷取畫面後複製到剪貼簿</value>
   </data>
-  <data name="CoverDownloader" xml:space="preserve">
-    <value>封面下載</value>
+  <data name="DanmakuExporter" xml:space="preserve">
+    <value>彈幕 XML 匯出</value>
   </data>
-  <data name="CoverDownloaderDescription" xml:space="preserve">
-    <value>下載指定影片的封面到本機文件</value>
+  <data name="DanmakuExporterDescription" xml:space="preserve">
+    <value>將影片各分P彈幕儲存為標準 XML 檔案</value>
   </data>
-  <data name="CoverDownloaderIntroduce" xml:space="preserve">
-    <value>輸入影片的 AV 或 BV 號，軟體會嘗試取得其封面並提供預覽，確認後請點擊下載按鈕，軟體會將其下載到圖庫並打開</value>
+  <data name="DanmakuExporterIntroduce" xml:space="preserve">
+    <value>輸入影片 AV/BV 號或貼上影片連結，選擇儲存資料夾後，軟體會逐分P匯出彈幕 XML 檔案</value>
+  </data>
+  <data name="VideoIdOrLink" xml:space="preserve">
+    <value>AV/BV 影片號或影片連結</value>
+  </data>
+  <data name="ExportDanmaku" xml:space="preserve">
+    <value>匯出彈幕</value>
+  </data>
+  <data name="DanmakuExportCompleted" xml:space="preserve">
+    <value>彈幕匯出完成</value>
   </data>
   <data name="CurrentPlaybackRate" xml:space="preserve">
     <value>目前播放速率</value>
@@ -491,7 +485,7 @@ UGC優先級：分P &gt; 播放列表 &gt; 合集影片 &gt; 關聯影片 (如�
     <value>下載資料夾</value>
   </data>
   <data name="DownloadTip" xml:space="preserve">
-    <value>軟體本身不提供下載功能，但支援生成 BBDown 指令，具體的使用方法參見 支援&amp;協助</value>
+    <value>軟體支援直接下載並合併目前影片的音訊與視訊軌道。</value>
   </data>
   <data name="DownloadType" xml:space="preserve">
     <value>下載類型</value>
@@ -621,6 +615,9 @@ UGC優先級：分P &gt; 播放列表 &gt; 合集影片 &gt; 關聯影片 (如�
   <data name="FlvNotSupported" xml:space="preserve">
     <value>目前嗶哩不能播放 flv 格式的直播，請在網頁中打開該直播間</value>
   </data>
+  <data name="LiveStreamUnavailable" xml:space="preserve">
+    <value>找不到目前清晰度下可播放的直播流，請切換清晰度或稍後重試</value>
+  </data>
   <data name="Follow" xml:space="preserve">
     <value>追蹤</value>
   </data>
@@ -668,9 +665,6 @@ UGC優先級：分P &gt; 播放列表 &gt; 合集影片 &gt; 關聯影片 (如�
   </data>
   <data name="FunctionIntroduce" xml:space="preserve">
     <value>功能說明</value>
-  </data>
-  <data name="GenerateCommand" xml:space="preserve">
-    <value>生成命令</value>
   </data>
   <data name="Generic" xml:space="preserve">
     <value>一般</value>

@@ -10,7 +10,6 @@ using Bili.Models.Data.Pgc;
 using Bili.Models.Enums;
 using Bili.Toolkit.Interfaces;
 using Bili.ViewModels.Interfaces.Account;
-using Bili.ViewModels.Interfaces.Common;
 using Bili.ViewModels.Interfaces.Community;
 using Bili.ViewModels.Interfaces.Core;
 using Bili.ViewModels.Interfaces.Pgc;
@@ -41,8 +40,7 @@ namespace Bili.ViewModels.Uwp.Pgc
             IRecordViewModel recordViewModel,
             IAccountViewModel accountViewModel,
             IMediaPlayerViewModel mediaPlayerViewModel,
-            ICommentPageViewModel commentPageViewModel,
-            IDownloadModuleViewModel downloadViewModel)
+            ICommentPageViewModel commentPageViewModel)
         {
             _playerProvider = playerProvider;
             _authorizeProvider = authorizeProvider;
@@ -67,7 +65,6 @@ namespace Bili.ViewModels.Uwp.Pgc
             MediaPlayerViewModel = mediaPlayerViewModel;
             MediaPlayerViewModel.MediaEnded += OnMediaEnded;
             MediaPlayerViewModel.InternalPartChanged += OnInternalPartChanged;
-            DownloadViewModel = downloadViewModel;
             IsSignedIn = _authorizeProvider.State == AuthorizeState.SignedIn;
             _authorizeProvider.StateChanged += OnAuthorizeStateChanged;
 

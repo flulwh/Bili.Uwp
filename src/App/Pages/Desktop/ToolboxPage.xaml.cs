@@ -30,11 +30,8 @@ namespace Bili.App.Pages.Desktop
             var item = (sender as FrameworkElement).DataContext as IToolboxItemViewModel;
             switch (item.Type)
             {
-                case Models.Enums.ToolboxItemType.AvBvConverter:
-                    new AvBvConverterView().Show();
-                    break;
-                case Models.Enums.ToolboxItemType.CoverDownloader:
-                    new CoverDownloaderView().Show();
+                case Models.Enums.ToolboxItemType.DanmakuExporter:
+                    new DanmakuExporterView().Show();
                     break;
                 default:
                     break;
