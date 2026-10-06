@@ -6,11 +6,11 @@
 
 # 哔哩
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Richasy/Bili.Uwp)](https://github.com/Richasy/Bili.Uwp/releases) ![GitHub Release Date](https://img.shields.io/github/release-date/Richasy/Bili.Uwp) ![GitHub All Releases](https://img.shields.io/github/downloads/Richasy/Bili.Uwp/total) ![GitHub stars](https://img.shields.io/github/stars/Richasy/Bili.Uwp?style=flat) ![GitHub forks](https://img.shields.io/github/forks/Richasy/Bili.Uwp)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/flulwh/Bili.Uwp)](https://github.com/flulwh/Bili.Uwp/releases) ![GitHub Release Date](https://img.shields.io/github/release-date/flulwh/Bili.Uwp) ![GitHub All Releases](https://img.shields.io/github/downloads/flulwh/Bili.Uwp/total) ![GitHub stars](https://img.shields.io/github/stars/flulwh/Bili.Uwp?style=flat) ![GitHub forks](https://img.shields.io/github/forks/Richasy/Bili.Uwp)
 
 `哔哩` 现在为 Windows 11 设计！
   
-[![Release Builder](https://github.com/Richasy/Bili.Uwp/actions/workflows/release-builder.yml/badge.svg)](https://github.com/Richasy/Bili.Uwp/actions/workflows/release-builder.yml)
+[![Release Builder](https://github.com/flulwh/Bili.Uwp/actions/workflows/release-builder.yml/badge.svg)](https://github.com/flulwh/Bili.Uwp/actions/workflows/release-builder.yml)
 
 </div>
 
@@ -22,6 +22,18 @@
 
 `哔哩` 是一款 [哔哩哔哩](https://www.bilibili.com) 的第三方应用，使用 UWP 框架开发，是原生的 Windows 应用，支持 Windows 10/11 桌面系统。主打设计和易用性，~~广受用户好评~~。
 
+## 维护与署名
+
+本仓库是由 **flulwh** 维护的第三方分支，与原作者及哔哩哔哩官方无隶属关系。原项目由 **Richasy** 创建，原作者署名及 [MIT 许可证](./LICENSE) 均予以保留。第三方维护内容、发布包和签名由 flulwh 独立负责。
+
+原项目：[Richasy/Bili.Uwp](https://github.com/Richasy/Bili.Uwp)。本分支的安装包请从 [flulwh/Bili.Uwp Releases](https://github.com/flulwh/Bili.Uwp/releases) 获取。由于包 Publisher 已变更，原版与本分支的安装包使用不同的签名身份，不能通过本分支安装包覆盖升级原版。
+
+## 开发与签名
+
+为保护签名私钥，仓库不分发 `.pfx` 文件。首次本地打包时，在 Visual Studio 的 `Package.appxmanifest` → `Packaging` → `Choose Certificate` 中创建测试证书，Publisher 必须填写 `CN=flulwh`，并将证书保存为 `src\App\App_TemporaryKey_flulwh.pfx`。安装自签名包前，将对应的公有 `.cer` 安装到当前用户的“受信任的人”证书存储区。不要提交 `.pfx` 或其他私钥文件。
+
+Release Builder 工作流使用仓库 Actions Secret `SIGNING_CERTIFICATE_BASE64` 还原签名证书。仓库所有者需自行配置该 Secret；私钥不要提交到 Git。
+
 ## 🙌 简单的开始
 
 ~~### 从商店安装 (不可用)~~
@@ -32,7 +44,7 @@
 
 ### 侧加载 (Sideload)
 
-如果你想本地安装哔哩，或者尝试当月的最新功能。请打开右侧的 [Release](https://github.com/Richasy/Bili.Uwp/releases) 页面，找到最新版本，并选择适用于当前系统的安装包下载。
+如果你想本地安装哔哩，或者尝试当月的最新功能，请打开 [本分支的 Releases](https://github.com/flulwh/Bili.Uwp/releases)，找到最新版本，并选择适用于当前系统的安装包下载。
 
 然后打开 [系统设置](ms-settings:developers)，打开 `开发者模式` ，并等待系统安装一些必要的扩展项。
 
@@ -48,7 +60,7 @@
 
 ## 📃 文档
 
-所有关于 `哔哩` 的文档，包括架构、使用说明等，都放在仓库的 [Wiki](https://github.com/Richasy/Bili.Uwp/wiki) 中，如果你发现有文档缺失或错误，请提交 [Issue](https://github.com/Richasy/Bili.Uwp/issues/new/choose) 说明错漏的内容。
+原项目的架构和使用说明仍可在 [Richasy/Bili.Uwp Wiki](https://github.com/Richasy/Bili.Uwp/wiki) 查阅；本分支的问题与维护建议请提交到 [flulwh/Bili.Uwp Issues](https://github.com/flulwh/Bili.Uwp/issues/new/choose)。
 
 ## 🚀 协作
 

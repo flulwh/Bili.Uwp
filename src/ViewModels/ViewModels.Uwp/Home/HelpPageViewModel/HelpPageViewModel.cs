@@ -92,10 +92,10 @@ namespace Bili.ViewModels.Uwp.Home
         }
 
         private async Task AskIssueAsync()
-            => await Launcher.LaunchUriAsync(new Uri("https://github.com/Richasy/Bili.Uwp/issues/new/choose")).AsTask();
+            => await Launcher.LaunchUriAsync(new Uri("https://github.com/flulwh/Bili.Uwp/issues/new/choose")).AsTask();
 
         private async Task GotoProjectHomeAsync()
-            => await Launcher.LaunchUriAsync(new Uri("https://github.com/Richasy/Bili.Uwp/")).AsTask();
+            => await Launcher.LaunchUriAsync(new Uri("https://github.com/flulwh/Bili.Uwp/")).AsTask();
 
         private async Task GotoDeveloperBiliBiliHomePageAsync()
             => await Launcher.LaunchUriAsync(new Uri("https://space.bilibili.com/5992670")).AsTask();

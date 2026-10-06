@@ -24,9 +24,8 @@
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <PackageCertificateKeyFile>App_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>App_TemporaryKey_flulwh.pfx</PackageCertificateKeyFile>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
-    <PackageCertificateThumbprint>C3B9A35BB185E430F381F524A644B2598DDF2500</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
@@ -1393,7 +1392,7 @@
     <Content Include="Resources\Misc\Question.CHS.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_TemporaryKey.pfx" />
+    <None Include="App_TemporaryKey_flulwh.pfx" Condition="Exists('App_TemporaryKey_flulwh.pfx')" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

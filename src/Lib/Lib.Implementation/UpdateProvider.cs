@@ -16,7 +16,7 @@ namespace Bili.Lib
     /// </summary>
     public class UpdateProvider : IUpdateProvider
     {
-        private const string LatestReleaseUrl = "https://api.github.com/repos/Richasy/Bili.Uwp/releases/latest";
+        private const string LatestReleaseUrl = "https://api.github.com/repos/flulwh/Bili.Uwp/releases/latest";
 
         /// <inheritdoc/>
         public async Task<GithubReleaseResponse> GetGithubLatestReleaseAsync()

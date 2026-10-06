@@ -151,10 +151,10 @@
     <value>任意</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
-    <value>哔哩是云之幻练手做的项目，旨在构建BiliBili的桌面客户端，满足个人需求</value>
+    <value>哔哩是云之幻为构建BiliBili桌面客户端创建的项目。本第三方分支由 flulwh 维护。</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>哔哩 Preview</value>
+    <value>哔哩（第三方维护版）</value>
   </data>
   <data name="AppTheme" xml:space="preserve">
     <value>应用主题</value>

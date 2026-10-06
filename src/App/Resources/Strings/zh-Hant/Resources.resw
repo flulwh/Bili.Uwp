@@ -151,10 +151,10 @@
     <value>任意</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
-    <value>嗶哩是雲之幻練手做的項目，旨在構建BiliBili的桌面用戶端，滿足個人需求</value>
+    <value>嗶哩是雲之幻為構建BiliBili桌面用戶端建立的專案。本第三方分支由 flulwh 維護。</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>嗶哩 Preview</value>
+    <value>嗶哩（第三方維護版）</value>
   </data>
   <data name="AppTheme" xml:space="preserve">
     <value>軟體主題</value>
