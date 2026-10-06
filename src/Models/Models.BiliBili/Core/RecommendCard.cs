@@ -130,7 +130,7 @@ namespace Bili.Models.BiliBili
         /// 发布者Id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "up_id", Required = Required.Default)]
-        public int PublisherId { get; set; }
+        public long PublisherId { get; set; }
 
         /// <summary>
         /// 发布者名称.
@@ -166,7 +166,7 @@ namespace Bili.Models.BiliBili
         /// 视频Aid.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aid", Required = Required.Default)]
-        public int Aid { get; set; }
+        public long Aid { get; set; }
     }
 
     /// <summary>
@@ -179,13 +179,13 @@ namespace Bili.Models.BiliBili
         /// 视频的Aid.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "aid", Required = Required.Default)]
-        public int Aid { get; set; }
+        public long Aid { get; set; }
 
         /// <summary>
         /// 视频第一个分P的Id.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cid", Required = Required.Default)]
-        public int Cid { get; set; }
+        public long Cid { get; set; }
 
         /// <summary>
         /// 视频类型，一般为av.
